@@ -1,0 +1,219 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #121212;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+/* Load More Button */
+#load-more {
+    border: 6px solid #444;
+    color: #e0e0e0;
+    background-color: #17945d;
+    width: 100%;
+    height: 60px;
+    border-left: 0;
+    border-right: 0;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Top border animation */
+#load-more.border-animated::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.05) 30%,
+            rgba(255, 255, 255, 0.15) 45%,
+            rgba(255, 255, 255, 0.65) 49%,
+            rgba(255, 255, 255, 0.15) 51%,
+            rgba(255, 255, 255, 0.05) 70%,
+            rgba(255, 255, 255, 0) 100%);
+    background-size: 400% 100%;
+    animation-name: animateTopBorder;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-duration: 0.9s;
+}
+
+/* Bottom border animation */
+#load-more.border-animated::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.05) 30%,
+            rgba(255, 255, 255, 0.15) 45%,
+            rgba(255, 255, 255, 0.65) 49%,
+            rgba(255, 255, 255, 0.15) 51%,
+            rgba(255, 255, 255, 0.05) 70%,
+            rgba(255, 255, 255, 0) 100%);
+    background-size: 400% 100%;
+    animation-name: animateBottomBorder;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-duration: 0.9s;
+}
+
+/* Button states */
+#load-more.disabled {
+    background-color: #555555;
+    cursor: not-allowed;
+}
+
+#load-more.sending-signal {
+    pointer-events: none;
+    animation-name: pulse-animation;
+    animation-timing-function: linear;
+    animation-duration: var(--sending-signal-animation-duration);
+    animation-iteration-count: 1;
+    cursor: wait;
+}
+
+#load-more:not(.disabled):active {
+    background: #218a5b;
+    color: #ffffff;
+}
+
+.button-text {
+    transition: opacity var(--updating-button-text-duration) ease;
+}
+
+/* Content area */
+#items {
+    overflow: auto;
+    flex: 1;
+    background-color: #121212;
+}
+
+
+
+.content {
+    padding: 15px;
+    border-top: 1px solid #444;
+    background-color: #222;
+    color: #e0e0e0;
+}
+
+
+
+.main-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.title-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.job-title {
+    margin: 0;
+    font-size: 1em;
+    color: #90caf9;
+    font-weight: 600;
+}
+
+.company-location {
+    font-size: 0.9em;
+    color: #b0bec5;
+    margin: 0;
+}
+
+/* Badges */
+.badge {
+    font-size: 0.75em;
+    padding: 1px 4px;
+    border-radius: 3px;
+    white-space: nowrap;
+}
+
+.verified-badge {
+    background: #1b5e20;
+    color: #c8e6c9;
+}
+
+.easy-apply-badge {
+    background: #0d47a1;
+    color: #bbdefb;
+}
+
+.job-type {
+    font-size: 0.85em;
+    color: #bbb;
+}
+
+.footer {
+    background: #121212;
+    flex-shrink: 0;
+}
+
+.metadata {
+    max-height: 0px;
+    transition: max-height 4s ease-in;
+}
+
+.metadata:not(:empty) {
+    max-height: 100vh;
+}
+
+/* Animations */
+@keyframes pulse-animation {
+    0% {
+        background-color: #17945d;
+    }
+
+    20% {
+        background-color: #2a5b9e;
+    }
+
+    40% {
+        background-color: #2a5b9e;
+    }
+
+
+
+    100% {
+        background-color: #2a5b9e;
+    }
+}
+
+@keyframes animateTopBorder {
+    0% {
+        background-position: 100% 0;
+    }
+
+    100% {
+        background-position: 0% 0;
+    }
+}
+
+@keyframes animateBottomBorder {
+    0% {
+        background-position: 0% 0;
+    }
+
+    100% {
+        background-position: 100% 0;
+    }
+}
