@@ -11,7 +11,7 @@ lazy val root = project
   .in(file("."))
   .settings(
     name         := "datareeler",
-    version      := "0.1.0-SNAPSHOT",
+    version      := "0.1.0",
     organization := "com.keivanabdi",
     scalaVersion := scala3Version,
     libraryDependencies ++= Seq(
@@ -28,5 +28,29 @@ lazy val root = project
       "org.apache.pekko" %% "pekko-actor-testkit-typed" % pekkoVersion     % Test,
       "org.scalatest"    %% "scalatest"                 % scalaTestVersion % Test
     ),
-    testFrameworks += new TestFramework("org.scalatest.tools.Framework")
+    testFrameworks += new TestFramework("org.scalatest.tools.Framework"),
+    licenses += ("MIT", url("https://opensource.org/licenses/MIT")),
+    developers := List(
+      Developer(
+        "KeivanAbdi",
+        "Keivan A Khorsand",
+        "keivan.a.khorsand@gmail.com",
+        url("https://github.com/KeivanAbdi")
+      )
+    ),
+    scmInfo := Some(
+      ScmInfo(
+        url("https://github.com/KeivanAbdi/DataReeler"),
+        "scm:git@github.com:KeivanAbdi/DataReeler.git"
+      )
+    ),
+    pomIncludeRepository := { _ => false },
+    publishMavenStyle    := true,
+    publishTo := {
+      val centralSnapshots =
+        "https://central.sonatype.com/repository/maven-snapshots/"
+      if (isSnapshot.value) Some("central-snapshots" at centralSnapshots)
+      else localStaging.value
+    },
+    homepage := Some(url("https://github.com/keivanabdi/datareeler"))
   )

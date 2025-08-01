@@ -55,6 +55,12 @@ An interactive toolkit for prototyping and visualizing Akka/Pekko streams, putti
 
 This example showcases the bare minimum required to get the system up and running. More comprehensive, real-world examples will be published in the future.
 
+First, add the dependency to your `build.sbt` file:
+```scala
+libraryDependencies += "com.keivanabdi" %% "datareeler" % "0.1.0"
+```
+
+Then, you can use it in your code:
 ```scala
 import com.keivanabdi.datareeler.models.*
 import com.keivanabdi.datareeler.system.ReelerSystem
