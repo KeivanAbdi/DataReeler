@@ -5,7 +5,6 @@
 </p>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 An interactive toolkit for prototyping, debugging, and interactively exploring Akka/Pekko streams, putting you in control of the data flow. `datareeler` is a specialized developer tool that sits between your Akka/Pekko stream logic and a web browser.
 
