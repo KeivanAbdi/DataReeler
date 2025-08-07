@@ -13,6 +13,7 @@ An interactive toolkit for prototyping, debugging, and interactively exploring A
 - [✨ Features](#-features)
 - [💡 Core Concepts](#-core-concepts)
 - [🚀 Example Use Cases](#-example-use-cases)
+- [🏆 Showcase](#-showcase)
 - [📚 Minimal Example](#-minimal-example)
 - [🤝 Contributing](#-contributing)
 - [📄 License](#-license)
@@ -43,12 +44,13 @@ An interactive toolkit for prototyping, debugging, and interactively exploring A
     2.  **Real-time Enrichment:** As each tweet flows through the stream, a secondary call to another service can check the author's affiliation.
     3.  **Interactive Filtering:** The UI displays only the qualifying tweets. Using the `userRoutes` feedback mechanism, the user could submit a new list of "approved" authors, which an Actor on the backend uses to modify the filtering logic for all subsequent tweets.
 
-### Targeted Job Application Assistant
--   **Scenario:** Build a tool to streamline the job search process on a platform like LinkedIn. The goal is to pull a stream of job postings from a search query and allow a user to deeply inspect, cross-reference, and handpick the most relevant ones.
--   **Implementation:**
-    1.  **Lazy Stream:** The `inputReelElementStream` would perform a search on LinkedIn, lazily pulling job postings one by one.
-    2.  **Deep Inspection & Enrichment:** For each job posting, the stream could perform several enrichment steps in parallel, such as cross-referencing the company with Glassdoor for reviews or analyzing the job description for key skills.
-    3.  **Hand-picking & Action:** The UI would display each job posting along with all the enriched data (`userMetaData`). The user can then inspect the results and, using the `userRoutes` feedback loop, click a "Save for Later" or "Not Interested" button to build a curated list.
+## 🏆 Showcase
+
+This section highlights real-world applications built with `DataReeler`.
+
+### JobsReeler
+-   **Description:** An interactive job search tool that demonstrates the power of `DataReeler` for building "human-in-the-loop" applications. It scrapes Scala job postings from LinkedIn, enriches them using AI models (Ollama and Gemini) to analyze language and required proficiency, and cross-references companies for visa sponsorship. The filtered and enriched data is then presented in an interactive web UI where the user can explore the results.
+-   **Repository:** [https://github.com/KeivanAbdi/JobsReeler](https://github.com/KeivanAbdi/JobsReeler)
 
 ## 📚 Minimal Example
 
