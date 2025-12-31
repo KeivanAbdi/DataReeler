@@ -49,7 +49,7 @@ An interactive toolkit for prototyping, debugging, and interactively exploring A
 This section highlights real-world applications built with `DataReeler`.
 
 ### JobsReeler
--   **Description:** An interactive job search tool that demonstrates the power of `DataReeler` for building "human-in-the-loop" applications. It scrapes Scala job postings from LinkedIn, enriches them using AI models (Ollama and Gemini) to analyze language and required proficiency, and cross-references companies for visa sponsorship. The filtered and enriched data is then presented in an interactive web UI where the user can explore the results.
+-   **Description:** An interactive job search tool that demonstrates the power of `DataReeler` for building "human-in-the-loop" applications. It scrapes job postings from LinkedIn, enriches them using AI models (Ollama and Gemini) to analyze language and required proficiency, and cross-references companies for visa sponsorship. The filtered and enriched data is then presented in an interactive web UI where the user can explore the results.
 -   **Repository:** [https://github.com/KeivanAbdi/JobsReeler](https://github.com/KeivanAbdi/JobsReeler)
 
 ## 📚 Minimal Example
